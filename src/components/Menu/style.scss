@@ -1,0 +1,79 @@
+@import "../../styles/";
+
+.menu-main {
+  padding: 0 1rem;
+  height: calc(100vh - 16rem);
+  overflow-y: scroll;
+  width: 50%;
+  .menu-dashboard {
+    .menu-banner {
+      overflow: hidden;
+      width: 100%;
+      height: 10rem;
+      border-radius: 15px;
+      .menu-banner-img {
+        height: 100%;
+        width: 100%;
+        object-fit: fill;
+      }
+    }
+  }
+
+  .menu-card {
+    min-height: 8rem;
+    margin: 1rem 0;
+    background-color: white;
+    border-radius: 15px;
+    display: grid;
+
+    .menu-card-header {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+      align-items:center;
+      .menu-card-header-img-div {
+        width: 15%;
+        overflow: hidden;
+        height: 3rem;
+        border-radius: 0.25rem;
+        background-color: rgba($black, 0.01);
+        
+        .menu-card-header-img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+          aspect-ratio: 1/1;
+        }
+      }
+
+      .menu-card-header-desc {
+        width: 60%;
+        h2 {
+          font-size: 1.3rem;
+          font-weight: 600;
+          color: $black;
+          letter-spacing: 0.1em;
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          font-size: 1rem;
+          color: rgba($black, 0.6);
+        }
+      }
+      .menu-card-header-price {
+        font-size: 1.3rem;
+        font-weight: 600;
+        width: 25%;
+        color: $primary;
+      }
+    }
+
+    .menu-cart{
+        display: flex;
+    justify-content: flex-end;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    }
+  }
+}

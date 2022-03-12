@@ -1,0 +1,36 @@
+@import "../../styles/";
+.category-main {
+  text-align: center;
+width: 20%;
+  .category-ele {
+    padding: 2rem;
+    border-right: 3px solid $primaryBlur;
+    opacity: 0.5;
+
+    .category-img-div {
+      background-color: $primaryBlur;
+      height: 6rem;
+      border-radius: 50%;
+      overflow: hidden;
+      padding: 1rem;
+      .category-img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        -webkit-user-drag: none;
+      }
+    }
+
+    .category-name {
+      color: $primary;
+      font-size: 1.2rem;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .category-ele-selected {
+    opacity: 1;
+    border-right: 3px solid $primary;
+  }
+}
