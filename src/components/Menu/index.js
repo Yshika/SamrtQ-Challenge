@@ -3,7 +3,7 @@ import { Context } from "../../context";
 import "./style.scss";
 
 const Menu = ({ selectedCategory = {} }) => {
-  const { menu = {}, submenu = {} } = useContext(Context);
+  const { menu = {}, addToCart = () => {} } = useContext(Context);
   const [displayedMenu, setDisplayedMenu] = useState([]);
 
   useEffect(() => {
@@ -46,7 +46,9 @@ const Menu = ({ selectedCategory = {} }) => {
             </div>
 
             <div className="menu-cart">
-              <button className="button">Add to Cart </button>
+              <button className="button" onClick={() => addToCart(ele)}>
+                Add to Cart
+              </button>
             </div>
           </div>
         );

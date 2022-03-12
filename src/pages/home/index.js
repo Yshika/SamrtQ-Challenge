@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import Category from "../../components/category";
 import Menu from "../../components/Menu";
+import Summary from "../../components/summary";
 import { Context } from "../../context";
 import "./style.scss";
 const Home = () => {
@@ -20,7 +21,7 @@ const Home = () => {
           setSelectedCategory={setSelectedCategory}
         ></Category>
         <Menu selectedCategory={selectedCategory}>Food</Menu>
-        <div>Cart</div>
+        <Summary>Cart</Summary>
       </section>
     </main>
   );

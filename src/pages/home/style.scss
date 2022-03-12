@@ -1,15 +1,24 @@
 @import "../../styles";
 
 .main {
-  padding: 2rem 5rem;
+  padding: 2rem 5rem 0;
   .main-heading {
     color: $primary;
     text-transform: capitalize;
     font-weight: bold;
     font-size: 2rem;
   }
-  .main-section{
-      display: flex;
-      margin: 2rem 0;
+  .main-section {
+    display: flex;
+    margin: 2rem 0;
+    @include tablet {
+      flex-direction: column;
+    }
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+  @include mobile {
+    padding: 1rem;
   }
 }

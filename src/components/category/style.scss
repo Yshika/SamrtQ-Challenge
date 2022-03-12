@@ -1,7 +1,18 @@
 @import "../../styles/";
 .category-main {
   text-align: center;
-width: 20%;
+  width: 20%;
+
+  @include tablet {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  @include mobile {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
   .category-ele {
     padding: 2rem;
     border-right: 3px solid $primaryBlur;
@@ -19,18 +30,45 @@ width: 20%;
         object-fit: contain;
         -webkit-user-drag: none;
       }
+      @include mobile {
+        height: 2rem;
+        width: 2rem;
+        padding: 0;
+      }
+     
     }
 
     .category-name {
       color: $primary;
       font-size: 1.2rem;
+      @include mobile {
+        display: none;
+      }
     }
     &:hover {
       cursor: pointer;
+    }
+    @include tablet {
+      border-right: none;
+      border-bottom: 3px solid $primaryBlur;
+    }
+    @include mobile {
+      border-right: none;
+      border-bottom: 3px solid $primaryBlur;
+      padding: 0.5rem;
     }
   }
   .category-ele-selected {
     opacity: 1;
     border-right: 3px solid $primary;
+
+    @include tablet {
+      border-right: none;
+      border-bottom: 3px solid $primary;
+    }
+    @include mobile {
+      border-right: none;
+      border-bottom: 3px solid $primary;
+    }
   }
 }
