@@ -1,12 +1,9 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Category from "../../components/category";
 import Menu from "../../components/Menu";
 import Summary from "../../components/summary";
-import { Context } from "../../context";
 import "./style.scss";
 const Home = () => {
-  const data = useContext(Context);
-
   const [selectedCategory, setSelectedCategory] = useState({});
   useEffect(() => {
     console.log("selectedCategory", selectedCategory);

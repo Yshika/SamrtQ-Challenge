@@ -12,7 +12,6 @@ const Menu = ({ selectedCategory = {} }) => {
     setDisplayedMenu(
       menu?.filter((item) => item?.category === selectedCategory?.name)
     );
-    console.log("menu", displayedMenu);
   }, [menu, selectedCategory]);
 
   return (

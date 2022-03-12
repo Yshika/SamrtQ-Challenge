@@ -13,7 +13,7 @@ const Category = ({
       name: Object.keys(categories)[0],
       ...categories[Object.keys(categories)[0]],
     });
-  }, [categories]);
+  }, [categories, setSelectedCategory]);
 
   return (
     <div className="category-main">
