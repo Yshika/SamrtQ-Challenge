@@ -35,7 +35,11 @@ const Category = ({
             }}
           >
             <div className="category-img-div">
-              <img src={data?.icon} className="category-img"></img>
+              <img
+                src={data?.icon}
+                alt={data?.name}
+                className="category-img"
+              ></img>
             </div>
             <div className="category-name">{data?.name}</div>
           </div>

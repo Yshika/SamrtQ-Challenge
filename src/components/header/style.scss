@@ -17,9 +17,5 @@
       object-fit: contain;
     }
   }
-  .header-search{
-    @include mobile{
-     display: none;
-    }
-  }
+  
 }

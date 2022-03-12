@@ -1,13 +1,26 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { Context } from "../../context";
 import "./style.scss";
 const Payment = () => {
-  const { paymentMethods = [] } = useContext(Context);
-  console.log(paymentMethods);
+  const { paymentMethods = [], clearCart = () => {} } = useContext(Context);
+  const history = useHistory();
+  const [selectedMethod, setSelectedMethod] = useState("");
+
+  useEffect(() => {
+    setSelectedMethod(paymentMethods?.[0]?.value);
+  }, [paymentMethods]);
+
+  const handleSubmit = (e) => {
+    e?.preventDefault();
+    clearCart();
+    history?.push("/");
+  };
+
   return (
     <div>
-      <div className="heading">Order details</div>
+      <div className="heading pb-0">Order details</div>
       <div className="heading event">Event details</div>
 
       <div className="card-container container">
@@ -41,14 +54,28 @@ const Payment = () => {
       <div className="heading event">Select payment method</div>
 
       <div className="card-container container">
-        {paymentMethods?.map((ele, i) => {
-          return (
-            <div key={i}>
-              <input type="radio" value={ele?.value} />
-              {ele?.label}
-            </div>
-          );
-        })}
+        <Form>
+          {paymentMethods?.map((ele, i) => {
+            return (
+              <span key={i} className="card-container-span">
+                <input
+                  type="radio"
+                  value={ele?.value}
+                  onChange={() => {
+                    setSelectedMethod(ele?.value);
+                  }}
+                  checked={selectedMethod === ele?.value}
+                />
+                {ele?.label}
+              </span>
+            );
+          })}
+          <div className="floatRight">
+            <Button className="primary" type="submit" onClick={handleSubmit}>
+              Make Payment
+            </Button>
+          </div>
+        </Form>
       </div>
     </div>
   );
